@@ -4,27 +4,63 @@ namespace VideoPlayer
 {
     public partial class Form1 : Form
     {
+        private LibVLC _libVLC;
+        private MediaPlayer _mediaPlayer;
+        private bool isMediaSet = false; // Track whether the media has already been set
+
         public Form1()
         {
             InitializeComponent();
+
+            // Initialize VLC libraries
+            Core.Initialize();
+
+            // Create a new LibVLC instance
+            _libVLC = new LibVLC();
+
+            // Create a new media player using the VLC instance and assign the video view
+            _mediaPlayer = new MediaPlayer(_libVLC);
+
+            // Connect media player to videoView1
+            _mediaPlayer.Hwnd = videoView1.Handle;
         }
 
-        private void videoView1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        // Play button click event handler
         private void playButton_Click(object sender, EventArgs e)
         {
+            // If the media has not been set yet, set it and play the video from the beginning
+            if (!isMediaSet)
+            {
+                // Path to your test video
+                string videoPath = @"C:\test-videos\harvesting-chimerose-2024-09-24 15-44-31.mkv";
 
+                // Create a media object
+                var media = new Media(_libVLC, new Uri(videoPath));
+
+                // Set the media to the player
+                _mediaPlayer.Media = media;
+
+                // Play the video
+                _mediaPlayer.Play();
+
+                // Mark that the media is set
+                isMediaSet = true;
+            }
+            else
+            {
+                // If media is already set, just resume playing
+                _mediaPlayer.Play();
+            }
         }
 
+        // Pause button click event handler
         private void pauseButton_Click(object sender, EventArgs e)
         {
-
+            // Pause the video
+            if (_mediaPlayer.IsPlaying)
+            {
+                _mediaPlayer.Pause();
+            }
         }
     }
 }
-
-
-

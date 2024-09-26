@@ -32,10 +32,10 @@
             panel2 = new Panel();
             videoView1 = new LibVLCSharp.WinForms.VideoView();
             panel3 = new Panel();
+            pauseButton = new Button();
+            playButton = new Button();
             panel4 = new Panel();
             panel5 = new Panel();
-            playButton = new Button();
-            pauseButton = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)videoView1).BeginInit();
             panel3.SuspendLayout();
@@ -68,7 +68,6 @@
             videoView1.Size = new Size(1717, 696);
             videoView1.TabIndex = 0;
             videoView1.Text = "videoView1";
-            videoView1.Click += videoView1_Click;
             // 
             // panel3
             // 
@@ -79,6 +78,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1717, 82);
             panel3.TabIndex = 2;
+            // 
+            // pauseButton
+            // 
+            pauseButton.Location = new Point(223, 11);
+            pauseButton.Name = "pauseButton";
+            pauseButton.Size = new Size(145, 58);
+            pauseButton.TabIndex = 1;
+            pauseButton.Text = "Pause";
+            pauseButton.UseVisualStyleBackColor = true;
+            pauseButton.Click += pauseButton_Click;
+            // 
+            // playButton
+            // 
+            playButton.Location = new Point(54, 11);
+            playButton.Name = "playButton";
+            playButton.Size = new Size(145, 58);
+            playButton.TabIndex = 0;
+            playButton.Text = "Play";
+            playButton.UseVisualStyleBackColor = true;
+            playButton.Click += playButton_Click;
             // 
             // panel4
             // 
@@ -95,26 +114,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(69, 614);
             panel5.TabIndex = 4;
-            // 
-            // playButton
-            // 
-            playButton.Location = new Point(54, 11);
-            playButton.Name = "playButton";
-            playButton.Size = new Size(145, 58);
-            playButton.TabIndex = 0;
-            playButton.Text = "Play";
-            playButton.UseVisualStyleBackColor = true;
-            playButton.Click += playButton_Click;
-            // 
-            // pauseButton
-            // 
-            pauseButton.Location = new Point(223, 11);
-            pauseButton.Name = "pauseButton";
-            pauseButton.Size = new Size(145, 58);
-            pauseButton.TabIndex = 1;
-            pauseButton.Text = "Pause";
-            pauseButton.UseVisualStyleBackColor = true;
-            pauseButton.Click += pauseButton_Click;
             // 
             // Form1
             // 
