@@ -56,7 +56,7 @@ namespace WinFormsAppVLC
         // Pause button click event handler
         private void pauseButton_Click(object sender, EventArgs e)
         {
-            // Pause the video
+            /* Pause the video*/
             if (_mediaPlayer.IsPlaying)
             {
                 _mediaPlayer.Pause();
