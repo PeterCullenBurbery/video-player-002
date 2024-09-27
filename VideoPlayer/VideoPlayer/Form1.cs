@@ -99,7 +99,7 @@ namespace VideoPlayer
                 JOIN kingdom_rush.kingdom_rush_level_stage kr_stage ON btl.kingdom_rush_level_stage_id = kr_stage.kingdom_rush_level_stage_id
                 JOIN kingdom_rush.play_mode pm ON btl.play_mode_id = pm.play_mode_id
                 JOIN kingdom_rush.game_difficulty gd ON btl.game_difficulty_id = gd.game_difficulty_id
-                WHERE REGEXP_LIKE(kr_stage.kingdom_rush_level_stage, 'Beheader''s Seat', 'i')
+                WHERE REGEXP_LIKE(kr_stage.kingdom_rush_level_stage, 'The Grand Arena', 'i')
                   AND REGEXP_LIKE(gd.game_difficulty, 'Impossible', 'i')
                   AND REGEXP_LIKE(pm.play_mode, 'Campaign', 'i')
                   AND REGEXP_LIKE(p.username, 'best of the best cream of the crop crème de la crème', 'i')";
